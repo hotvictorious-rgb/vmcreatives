@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victorious Market — Viral Commercial Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5E17EB;
+      --primary-dark: #3F0B9E;
+      --gold: #FFD700;
+      --gold-dark: #CCA000;
+      --bg: #0B0813;
+      --surface: #171326;
+      --surface-light: #231C38;
+      --text: #FFFFFF;
+      --text-muted: #A39DB5;
+      --border: rgba(255, 215, 0, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Top Nav */
+    header {
+      background: rgba(23, 19, 38, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--gold));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(94, 23, 235, 0.5);
+    }
+
+    .brand-info h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #FFFFFF, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-info p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .badge-pill {
+      background: rgba(255, 215, 0, 0.12);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 9:16 Phone Simulator */
+    .simulator-wrapper {
+      position: sticky;
+      top: 96px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .phone-frame {
+      width: 340px;
+      height: 604px;
+      background: #000;
+      border-radius: 44px;
+      border: 8px solid #2B2444;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(94, 23, 235, 0.25);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 24px;
+      background: #2B2444;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      z-index: 50;
+    }
+
+    .phone-screen {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem 1.2rem 1.5rem;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Scene Visual Moods */
+    .screen-scene-1 {
+      background: radial-gradient(circle at center, #2e1065 0%, #090317 100%);
+    }
+    .screen-scene-2 {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('thumbnail.jpg') center/cover;
+    }
+    .screen-scene-3 {
+      background: radial-gradient(circle at center, #4c0519 0%, #190108 100%);
+    }
+    .screen-scene-4 {
+      background: radial-gradient(circle at center, #1e1b4b 0%, #08071e 100%);
+    }
+    .screen-scene-5 {
+      background: linear-gradient(135deg, #5E17EB 0%, #150239 60%, #0a011d 100%);
+    }
+    .screen-scene-6 {
+      background: radial-gradient(circle at center, #064e3b 0%, #021a14 100%);
+    }
+    .screen-scene-7 {
+      background: linear-gradient(135deg, #5E17EB 0%, #FFD700 160%);
+    }
+
+    .screen-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .screen-logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .screen-timer-badge {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #fff;
+    }
+
+    .screen-visual-card {
+      margin: auto 0;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .scene-icon-large {
+      font-size: 3.5rem;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .scene-meta-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .scene-dialogue-caption {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.15;
+      color: #FFE600;
+      text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000, 0 4px 15px rgba(0, 0, 0, 0.9);
+      letter-spacing: 0.04em;
+    }
+
+    .screen-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 20;
+    }
+
+    .social-side-actions {
+      position: absolute;
+      right: 12px;
+      bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.75rem;
+      color: #fff;
+    }
+
+    .action-bubble {
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Simulator Controls */
+    .sim-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+      padding: 10px 18px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+    }
+
+    .btn-control {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .btn-control:hover {
+      background: var(--surface-light);
+      color: var(--gold);
+    }
+
+    .btn-play-pause {
+      background: var(--primary);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+      box-shadow: 0 0 15px rgba(94, 23, 235, 0.6);
+    }
+
+    .btn-play-pause:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    /* Right Studio Content */
+    .studio-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(94, 23, 235, 0.2) 0%, rgba(255, 215, 0, 0.05) 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-banner p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 650px;
+    }
+
+    .brand-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 1.2rem;
+    }
+
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .swatch:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+
+    .swatch-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(94, 23, 235, 0.4);
+    }
+
+    .tab-content {
+      display: none;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .tab-content.active {
+      display: flex;
+    }
+
+    /* Scene Cards */
+    .scene-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all 0.25s;
+    }
+
+    .scene-card.active-scene {
+      border-color: var(--gold);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+    }
+
+    .scene-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .scene-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .scene-num {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    .scene-time {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .scene-prompt-box {
+      background: #0D0A16;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #D1CCDE;
+      white-space: pre-wrap;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+
+    .btn-copy {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+
+    .btn-copy:hover {
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(94, 23, 235, 0.4);
+    }
+
+    .btn-copy.copied {
+      background: #10B981;
+    }
+
+    /* CapCut & Social Cards */
+    .utility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .info-card h3 {
+      font-size: 1.1rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">VM</div>
+      <div class="brand-info">
+        <h1>VICTORIOUS MARKET — CREATIVE STUDIO</h1>
+        <p>Campaign: "Uyo People, Una Don Suffer! 🥱" • Vertical 9:16 (50–56s)</p>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <div class="badge-pill">
+        <span>🟣</span> Veo 3.1 & Google AI Studio Ready
+      </div>
+      <a href="CONTENT_CATALOG.md" style="background: rgba(255, 215, 0, 0.15); border: 1px solid var(--gold); color: var(--gold); font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 9999px; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+        <span>📑</span> Master Content Catalog
+      </a>
+      <a href="characters/index.html" style="background: rgba(94, 23, 235, 0.25); border: 1px solid var(--primary); color: #fff; font-weight: 700; font-size: 0.85rem; padding: 8px 16px; border-radius: 9999px; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+        <span>👥</span> Character Universe
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Left: 9:16 Video Simulator -->
+    <div class="simulator-wrapper">
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="phone-screen screen-scene-1" id="phoneScreen">
+          <!-- Screen Header -->
+          <div class="screen-header">
+            <div class="screen-logo-badge">
+              <span>🛍️</span> VICTORIOUS MARKET
+            </div>
+            <div class="screen-timer-badge" id="screenTimer">00:04 / 00:56</div>
+          </div>
+
+          <!-- Scene Center Mockup -->
+          <div class="screen-visual-card">
+            <div class="scene-meta-title" id="screenSceneTitle">SCENE 1: THE HOOK</div>
+            <div class="scene-icon-large" id="screenSceneIcon">🤔</div>
+            <div class="scene-dialogue-caption" id="screenDialogue">
+              "UYO PEOPLE! UNA DON SUFFER BEFORE WHEN UNA DEY BUY THINGS ONLINE?"
+            </div>
+          </div>
+
+          <!-- Social Fake Overlay -->
+          <div class="social-side-actions">
+            <div><div class="action-bubble">❤️</div><div style="font-size: 0.65rem; text-align: center; margin-top: 2px;">24.5K</div></div>
+            <div><div class="action-bubble">💬</div><div style="font-size: 0.65rem; text-align: center; margin-top: 2px;">1.8K</div></div>
+            <div><div class="action-bubble">🔗</div><div style="font-size: 0.65rem; text-align: center; margin-top: 2px;">Share</div></div>
+          </div>
+
+          <!-- Screen Footer -->
+          <div class="screen-footer">
+            <div style="font-size: 0.75rem; color: #fff; font-weight: 700;">@victoriousmarket</div>
+            <div style="font-size: 0.65rem; color: #ddd;">Uyo People, Una Don Suffer! #AkwaIbom #ShopUyo #VictoriousMarket</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="sim-controls">
+        <button class="btn-control" id="prevBtn" title="Previous Scene">⏮</button>
+        <button class="btn-control btn-play-pause" id="playBtn" title="Play / Pause">▶</button>
+        <button class="btn-control" id="nextBtn" title="Next Scene">⏭</button>
+        <span style="font-size: 0.8rem; color: var(--gold); font-weight: 700; margin-left: 8px;" id="currentSceneDisplay">Scene 1 of 7</span>
+      </div>
+    </div>
+
+    <!-- Right: Studio Control Center -->
+    <div class="studio-panel">
+      <!-- Hero Campaign Brief -->
+      <div class="hero-banner">
+        <h2>Campaign Control Center</h2>
+        <p>Generate each 8-second clip separately in <strong>Google AI Studio (Veo 3.1)</strong> or <strong>Google Flow</strong>, download your CapCut subtitle file, copy viral social captions, and deploy!</p>
+        
+        <div class="brand-swatches">
+          <div class="swatch" onclick="copyText('#5E17EB')">
+            <div class="swatch-color" style="background: #5E17EB;"></div>
+            <span>#5E17EB (Royal Purple)</span>
+          </div>
+          <div class="swatch" onclick="copyText('#FFD700')">
+            <div class="swatch-color" style="background: #FFD700;"></div>
+            <span>#FFD700 (Gold)</span>
+          </div>
+          <div class="swatch" onclick="copyText('#FFFFFF')">
+            <div class="swatch-color" style="background: #FFFFFF; border: 1px solid #ccc;"></div>
+            <span>#FFFFFF (White)</span>
+          </div>
+          <div class="swatch" onclick="copyText('09118949035')">
+            <span>📞 09118949035</span>
+          </div>
+          <div class="swatch" onclick="copyText('https://www.victoriousmarket.com.ng')">
+            <span>🌐 victoriousmarket.com.ng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('scenes')">🎬 7 Scene Prompts (Veo 3.1)</button>
+        <button class="tab-btn" onclick="switchTab('subtitles')">📝 Subtitles & Script (.SRT)</button>
+        <button class="tab-btn" onclick="switchTab('audio')">🎵 Afrobeats Audio Prompt</button>
+        <button class="tab-btn" onclick="switchTab('social')">📱 Social Media Kit</button>
+        <button class="tab-btn" onclick="switchTab('thumbnail')">🖼️ Thumbnail Spec</button>
+        <button class="tab-btn" onclick="switchTab('spotlights')">⚡ 15s Product Ads</button>
+      </div>
+
+      <!-- TAB 1: SCENES -->
+      <div class="tab-content active" id="tab-scenes">
+        <!-- Scene 1 -->
+        <div class="scene-card active-scene" id="card-1">
+          <div class="scene-header">
+            <div class="scene-badge-group">
+              <span class="scene-num">SCENE 1</span>
+              <strong style="color: #fff;">The Attention-Grabbing Hook</strong>
+            </div>
+            <span class="scene-time">00:00 - 00:08</span>
+          </div>
+          <div class="scene-prompt-box" id="p1">Generate an 8-second ultra-realistic cinematic Nigerian comedy commercial in vertical 9:16 format.
+LOCATION: A modern Nigerian residential compound in Uyo, Akwa Ibom State. A few young Nigerian men are sitting together outside in the evening, casually discussing online shopping.
+CHARACTERS: Three realistic Nigerian young men aged approximately 23–30, naturally dressed in casual Nigerian urban fashion. Their expressions and body language should feel authentic.
+ACTION:
+One young man suddenly turns towards the camera with a playful but serious expression. He raises one hand as if addressing everybody watching the video.
+He speaks loudly and humorously in natural Nigerian Pidgin:
+"UYO PEOPLE! UNA DON SUFFER BEFORE WHEN UNA DEY BUY THINGS ONLINE?"
+The other two men look at each other and nod dramatically as if they have experienced the same thing.
+CAMERA:
+Start with a medium-wide shot of the three men. Quickly push the camera towards the main speaker when he addresses the audience. End with a close-up of his expressive face.
+AUDIO:
+Natural Nigerian male voice, authentic Nigerian Pidgin pronunciation, lively conversational delivery. Include subtle background compound ambience and light comedic sound effects.
+VISUAL QUALITY:
+Premium Nigerian television commercial, realistic skin textures, cinematic lighting, natural movement and professional colour grading.
+BRANDING:
+Introduce a subtle purple (#5E17EB) and gold (#FFD700) visual accent in the environment. Do not generate random logos or incorrect text.</div>
+          <button class="btn-copy" onclick="copyPrompt('p1', this)">📋 Copy Scene 1 Prompt for Veo</button>
+        </div>
+
+        <!-- Scene 2 -->
+        <div class="scene-card" id="card-2">
+          <div class="scene-header">
+            <div class="scene-badge-group">
+              <span class="scene-num">SCENE 2</span>
+              <strong style="color: #fff;">The Wrong Product Arrives</strong>
+            </div>
+            <span class="scene-time">00:08 - 00:16</span>
+          </div>
+          <div class="scene-prompt-box" id="p2">Create an 8-second ultra-realistic Nigerian comedy video in vertical 9:16 format.
+LOCATION: A clean, modern Nigerian apartment in Uyo, Akwa Ibom State.
+CHARACTER: A young Nigerian man sitting on a comfortable modern sofa, excitedly opening a parcel he ordered online.
+ACTION:
+He excitedly tears open the delivery packaging, expecting a brand-new expensive smartphone.
+Instead, he discovers a completely different, cheap-looking item inside.
+He freezes.
+He looks inside the package again.
+He looks at his phone.
+He looks at the item.
+Then he slowly turns towards the camera with a shocked expression.
+He says in natural Nigerian Pidgin:
+"HA! NA THIS THING I ORDER?!"
+He holds the wrong item up in disbelief.
+COMEDY:
+Use a brief dramatic pause, exaggerated facial expression and a funny comedic sound effect when he discovers the wrong product.
+CAMERA:
+Begin with a close-up of the parcel, cut to his excited face, then show the wrong item and finish with a close-up of his disappointed expression.
+LIGHTING:
+Natural indoor Nigerian apartment lighting, cinematic realism, premium commercial quality.
+BRANDING:
+Keep subtle purple (#5E17EB) and gold (#FFD700) accents in the scene. No fake company branding.</div>
+          <button class="btn-copy" onclick="copyPrompt('p2', this)">📋 Copy Scene 2 Prompt for Veo</button>
+        </div>
+
+        <!-- Scene 3 -->
+        <div class="scene-card" id="card-3">
+          <div class="scene-header">
+            <div class="scene-badge-group">
+              <span class="scene-num">SCENE 3</span>
+              <strong style="color: #fff;">The Frustration ("These Online People!")</strong>
+            </div>
+            <span class="scene-time">00:16 - 00:24</span>
+          </div>
+          <div class="scene-prompt-box" id="p3">Generate an 8-second photorealistic Nigerian comedy commercial in vertical 9:16 format.
+LOCATION: A stylish modern Nigerian living room in Uyo.
+CHARACTER: A fashionable Nigerian woman in her late twenties sitting with her close female friend on a modern sofa.
+ACTION:
+The woman holds her smartphone and angrily scrolls through an online shopping conversation.
+She explains what happened to her friend.
+She speaks naturally in Nigerian Pidgin:
+"ME I PAY FOR ORIGINAL SHOE. WETIN DEM SEND GIVE ME? NA ANOTHER SIZE AND ANOTHER COLOUR!"
+Her friend opens her mouth in disbelief and shakes her head.
+The woman shows her the ridiculously mismatched shoe she received.
+Both friends shake their heads in pure frustration.
+The second woman responds:
+"AH! THESE ONLINE PEOPLE!"
+COMEDY:
+Natural facial expressions, relatable Nigerian reactions, funny head tilts, and a brief humorous musical sting.
+CAMERA:
+Start with a two-shot showing both women. Move to an over-the-shoulder view of the phone, then return to their expressive faces.
+STYLE:
+Premium cinematic commercial, realistic Nigerian actors, authentic apartment setting, natural warm lighting, subtle purple (#5E17EB) and gold visual accents.</div>
+          <button class="btn-copy" onclick="copyPrompt('p3', this)">📋 Copy Scene 3 Prompt for Veo</button>
+        </div>
+
+        <!-- Scene 4 -->
+        <div class="scene-card" id="card-4">
+          <div class="scene-header">
+            <div class="scene-badge-group">
+              <span class="scene-num">SCENE 4</span>
+              <strong style="color: #fff;">Introduce Victorious MARKET</strong>
+            </div>
+            <span class="scene-time">00:24 - 00:32</span>
+          </div>
+          <div class="scene-prompt-box" id="p4">Create an 8-second premium Nigerian e-commerce commercial in vertical 9:16 format.
+TRANSITION:
+Move smoothly from the previous frustrating scene into a bright, clean, optimistic visual atmosphere with warm glowing light.
+LOCATION: A stylish, upscale modern Nigerian home in Uyo.
+ACTION:
+A confident, well-dressed young Nigerian man sits comfortably on a sofa, holding his smartphone.
+He opens the Victorious MARKET website (victoriousmarket.com.ng).
+The smartphone screen displays clear Victorious MARKET purple and gold branding with an organized modern e-commerce marketplace layout.
+Show him smoothly scrolling through product categories:
+Smartphones, Laptops, Power banks, Smartwatches, Rechargeable Fans, Kitchen appliances, Shoes, and Fashion.
+He smiles warmly and looks directly into the camera, saying in lively Nigerian Pidgin:
+"MY PEOPLE, MAKE UNA HEAR THIS ONE. WE GET VICTORIOUS MARKET FOR UYO!"
+CAMERA:
+Over-the-shoulder smartphone shot gliding down, followed by a crisp cinematic push-in close-up of his happy, reassuring expression.
+BRAND COLOURS:
+Use primary royal purple #5E17EB, gold #FFD700, clean white #FFFFFF, and sharp black.</div>
+          <button class="btn-copy" onclick="copyPrompt('p4', this)">📋 Copy Scene 4 Prompt for Veo</button>
+        </div>
+
+        <!-- Scene 5 -->
+        <div class="scene-card" id="card-5">
+          <div class="scene-header">
+            <div class="scene-badge-group">
+              <span class="scene-num">SCENE 5</span>
+              <strong style="color: #fff;">The Brand Promise & Showroom</strong>
+            </div>
+            <span class="scene-time">00:32 - 00:40</span>
+          </div>
+          <div class="scene-prompt-box" id="p5">Generate an 8-second professional Nigerian e-commerce brand commercial in vertical 9:16 format.
+ACTION:
+Show a sleek, dynamic montage of high-quality consumer products arranged in a premium showroom-style presentation.
+Include:
+A modern smartphone, sleek laptop, smartwatch, modern standing rechargeable fan, sneakers, designer handbag, and kitchen blender.
+Use elegant white minimalist display platforms, royal purple (#5E17EB) gradient backgrounds, and soft golden (#FFD700) rim highlights.
+Show a Nigerian customer browsing products seamlessly on a smartphone.
+Cut to an attractive branded purple parcel being carefully prepared and sealed for collection or delivery.
+The visuals communicate convenience, genuine authenticity, variety, and absolute shopping confidence.
+VOICE:
+A confident, warm Nigerian male voice speaks clearly and persuasively in Nigerian Pidgin:
+"NA YOUR SURE PLACE TO FIND QUALITY MATERIALS. PHONES, GADGETS, FASHION, HOME APPLIANCES AND MANY MORE!"
+CAMERA:
+Smooth 3D orbital product rotations, macro close-up product shots, crisp studio reflections, and professional advertising transitions.</div>
+          <button class="btn-copy" onclick="copyPrompt('p5', this)">📋 Copy Scene 5 Prompt for Veo</button>
+        </div>
+
+        <!-- Scene 6 -->
+        <div class="scene-card" id="card-6">
+          <div class="scene-header">
+            <div class="scene-badge-group">
+              <span class="scene-num">SCENE 6</span>
+              <strong style="color: #fff;">Direct Sales Message & Verified Delivery</strong>
+            </div>
+            <span class="scene-time">00:40 - 00:48</span>
+          </div>
+          <div class="scene-prompt-box" id="p6">Create an 8-second high-quality Nigerian commercial in vertical 9:16 format.
+LOCATION: A modern residential compound in Uyo, Akwa Ibom State, with lush green palm trees and paved driveway.
+ACTION:
+A smiling Nigerian customer receives a clean, professionally wrapped delivery parcel from a courteous delivery rider wearing a neat royal purple polo shirt.
+The customer beams with satisfaction.
+Cut to an exciting close-up of the parcel being smoothly unboxed:
+The product inside (a crisp new smartphone in original packaging) matches what was ordered, in pristine brand-new condition.
+VOICE:
+Use an energetic, lively Nigerian male voice speaking in authentic Nigerian Pidgin:
+"NO WASTE TIME AGAIN! VISIT VICTORIOUS MARKET TODAY. ORDER YOUR QUALITY PRODUCTS MAKE WE SERVE YOU!"
+CAMERA:
+Begin with a medium shot of the friendly delivery exchange. Cut dynamically to the customer smiling in relief, and finish with a clean hero product close-up.</div>
+          <button class="btn-copy" onclick="copyPrompt('p6', this)">📋 Copy Scene 6 Prompt for Veo</button>
+        </div>
+
+        <!-- Scene 7 -->
+        <div class="scene-card" id="card-7">
+          <div class="scene-header">
+            <div class="scene-badge-group">
+              <span class="scene-num">SCENE 7</span>
+              <strong style="color: #fff;">Final Branded Card & Call to Action</strong>
+            </div>
+            <span class="scene-time">00:48 - 00:56</span>
+          </div>
+          <div class="scene-prompt-box" id="p7">Create an 8-second premium final brand sequence for Victorious MARKET in vertical 9:16 format.
+BACKGROUND:
+A luxurious deep-purple (#5E17EB) gradient background with soft glowing ambient lighting, elegant flowing 3D gold (#FFD700) ribbons and clean white sparkles.
+CENTRE:
+Display the official VICTORIOUS MARKET branding prominently:
+"VICTORIOUS MARKET"
+"Your Trusted Online Market For Quality Products."
+Display the exact contact details clearly:
+Phone / WhatsApp: 09118949035
+Website: www.victoriousmarket.com.ng
+Include sleek modern minimalist icons representing online shopping cart, genuine badge, rapid delivery van, and customer care.
+VOICE-OVER:
+"VICTORIOUS MARKET! YOUR TRUSTED ONLINE MARKET FOR QUALITY PRODUCTS. ORDER TODAY!"
+AUDIO:
+Conclude with a memorable, uplifting corporate Afrobeats brand audio logo sting.</div>
+          <button class="btn-copy" onclick="copyPrompt('p7', this)">📋 Copy Scene 7 Prompt for Veo</button>
+        </div>
+      </div>
+
+      <!-- TAB 2: SUBTITLES -->
+      <div class="tab-content" id="tab-subtitles">
+        <div class="info-card">
+          <h3>📝 CapCut Subtitle Synchronizer</h3>
+          <p>This subtitle file is formatted with precise timestamps for the 7 scenes. You can download the <code>.srt</code> file directly into your CapCut project.</p>
+          <div class="scene-prompt-box" id="srtContent">1
+00:00:00,500 --> 00:00:07,500
+UYO PEOPLE! UNA DON SUFFER BEFORE WHEN UNA DEY BUY THINGS ONLINE?
+
+2
+00:00:08,500 --> 00:00:15,500
+HA! NA THIS THING I ORDER?!
+
+3
+00:00:16,500 --> 00:00:21,000
+ME I PAY FOR ORIGINAL SHOE. WETIN DEM SEND GIVE ME? NA ANOTHER SIZE AND ANOTHER COLOUR!
+
+4
+00:00:21,500 --> 00:00:24,000
+AH! THESE ONLINE PEOPLE!
+
+5
+00:00:25,000 --> 00:00:31,500
+MY PEOPLE, MAKE UNA HEAR THIS ONE. WE GET VICTORIOUS MARKET FOR UYO!
+
+6
+00:00:32,500 --> 00:00:39,500
+NA YOUR SURE PLACE TO FIND QUALITY MATERIALS. PHONES, GADGETS, FASHION, HOME APPLIANCES AND MANY MORE!
+
+7
+00:00:40,500 --> 00:00:47,500
+NO WASTE TIME AGAIN! VISIT VICTORIOUS MARKET TODAY. ORDER YOUR QUALITY PRODUCTS MAKE WE SERVE YOU!
+
+8
+00:00:48,500 --> 00:00:55,500
+VICTORIOUS MARKET! YOUR TRUSTED ONLINE MARKET FOR QUALITY PRODUCTS. ORDER TODAY!</div>
+          <div style="display: flex; gap: 12px;">
+            <button class="btn-copy" onclick="downloadSRT()">⬇️ Download .SRT for CapCut</button>
+            <button class="btn-copy" onclick="copyPrompt('srtContent', this)">📋 Copy Subtitle Text</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: AUDIO -->
+      <div class="tab-content" id="tab-audio">
+        <div class="info-card">
+          <h3>🎵 Suno AI / Udio / Producer Prompt</h3>
+          <p>Use this prompt in Suno or Udio to generate the 55-second Afrobeats commercial beat:</p>
+          <div class="scene-prompt-box" id="audioPrompt">Create an original 55-second Nigerian commercial background soundtrack.
+STYLE: Modern Afrobeats-inspired commercial advertising instrumental mixed with playful Nigerian comedic sound design.
+TEMPO: 104 BPM, bouncy groove, syncopated log drums, warm acoustic guitar riffs, and brass stabs.
+
+TIMELINE PROGRESSION:
+- 00:00 - 00:08 (Opening Hook): Short attention-grabbing African percussion hit followed by energetic, playful mid-tempo Afrobeats rhythm.
+- 00:08 - 00:24 (Comedy & Disappointment): Subtle funny reaction sounds, short comedic drum fills, record scratch, and brief comedic pauses to highlight the punchlines.
+- 00:24 - 00:40 (Brand Discovery & Showcase): Smooth uplifting transition into an inspiring, confident Afrobeats-pop corporate groove. Warm sub-bass, clean electronic shakers, airy synthesizer leads.
+- 00:40 - 00:48 (Delivery & Satisfaction): Energetic build-up with driving percussion and celebratory brass.
+- 00:48 - 00:55 (Brand Outro Sting): Uplifting, memorable brand sonic logo resolution on a bright major chord.
+
+MIXING GUIDELINES:
+Instrumental only. Mastered cleanly with dynamic headroom so the voice-over sits crisp and prominent on top without fighting for midrange frequencies.</div>
+          <button class="btn-copy" onclick="copyPrompt('audioPrompt', this)">📋 Copy Audio Generation Prompt</button>
+        </div>
+      </div>
+
+      <!-- TAB 4: SOCIAL -->
+      <div class="tab-content" id="tab-social">
+        <div class="info-card">
+          <h3>📱 Facebook Post & Ad Copy</h3>
+          <div class="scene-prompt-box" id="fbCopy">😂😂 UYO PEOPLE! UNA DON SUFFER BEFORE WHEN UNA DEY BUY THINGS ONLINE? 🥱🤦‍♂️
+
+You order original shoe, dem send another colour. You order phone, wetin arrive no resemble wetin you see online at all! 😭💔
+
+My people, online shopping no suppose be like gambling!
+
+Meet VICTORIOUS MARKET – Your Trusted Online Market For Quality Products right here in Uyo! 🛍️✨
+
+From authentic smartphones and gadgets to trendy fashion, footwear, kitchen essentials and home appliances, get genuine products at direct depot prices.
+
+💜 Shop with 100% confidence.
+💜 Doorstep delivery across Uyo & nationwide.
+💜 Safe and verified ordering.
+
+🛒 Visit our website right now:
+🌐 https://www.victoriousmarket.com.ng
+📞 Call/WhatsApp: 09118949035
+📍 8 Ekpo Obot Street, Uyo, Akwa Ibom State
+
+VICTORIOUS MARKET – Your Trusted Online Market For Quality Products.
+
+#VictoriousMARKET #UyoPeople #UyoBusiness #AkwaIbom #AkwaIbomTwitter #OnlineShoppingNigeria #QualityProducts #UyoVendors #ShopInUyo #WhatIOrderedVsWhatIGot</div>
+          <button class="btn-copy" onclick="copyPrompt('fbCopy', this)">📋 Copy Facebook Post</button>
+        </div>
+      </div>
+
+      <!-- TAB 5: THUMBNAIL -->
+      <div class="tab-content" id="tab-thumbnail">
+        <div class="info-card">
+          <h3>🖼️ Generated Official 9:16 Campaign Thumbnail</h3>
+          <p>Here is your generated campaign thumbnail for Victorious Market (featuring the Nigerian lead actor reacting with hilarious shock to a head of cabbage delivered instead of an iPhone!):</p>
+          <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+            <div style="width: 200px; height: 355px; border-radius: 16px; overflow: hidden; border: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+              <img src="thumbnail.jpg" alt="Campaign Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 12px;">
+              <a href="thumbnail.jpg" download="Victorious_Market_Thumbnail_9x16.jpg" class="btn-copy" style="text-decoration: none; width: fit-content;">
+                ⬇️ Download Official Thumbnail (High Res)
+              </a>
+              <div class="scene-prompt-box" id="thumbPrompt">A vibrant, high-click-through-rate vertical 9:16 social media video thumbnail for a viral Nigerian comedy commercial.
+Subject: A young expressive Nigerian man in casual urban fashion sitting on a sofa, holding an open crumpled delivery box and staring directly at the camera with a hilarious, exaggerated look of absolute shock and disbelief.
+Inside the package, a funny unexpected mismatched item is visible.
+Background: A sleek modern living room with deep royal purple (#5E17EB) backdrop lighting and glowing golden (#FFD700) rim light outlines.
+Typography Header Space: Leave clean contrast space at the top for bold, punchy text.
+Visual Quality: Photorealistic, 8k resolution, commercial advertisement photography, sharp facial details, dynamic studio lighting, cinematic color grading. Aspect ratio 9:16.</div>
+              <button class="btn-copy" onclick="copyPrompt('thumbPrompt', this)">📋 Copy Thumbnail Generation Prompt</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: 15S PRODUCT SPOTLIGHTS -->
+      <div class="tab-content" id="tab-spotlights">
+        <div class="info-card">
+          <h3>⚡ 15-Second Direct Response Product Ads</h3>
+          <p>Single-prompt micro-commercials for TikTok, Reels & WhatsApp Status designed for quick impulse sales:</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 10px;">
+            <!-- Fan -->
+            <div style="background: var(--surface-light); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <strong style="color: var(--gold);">🌬️ 1. Rechargeable Fan ("NEPA Take Light? No Wahala!")</strong>
+                <span style="font-size: 0.75rem; color: #fff; background: var(--primary); padding: 2px 8px; border-radius: 6px;">15 Seconds</span>
+              </div>
+              <div class="scene-prompt-box" id="fanPrompt">A dynamic 15-second cinematic vertical 9:16 commercial video. Setting: A cozy Nigerian living room in Uyo in the evening. Suddenly the room lights cut out (power outage). A young Nigerian man calmly presses a button on a sleek remote control. Instantly, a stylish, modern rechargeable standing fan powers on smoothly, blowing refreshing cool breeze, its soft glowing blue-white LED light illuminating his relaxed, smiling face. Camera executes a crisp 360-degree rotation around the fan highlighting its premium metallic finish and digital battery indicator. Lighting: Moody ambient darkness contrasting with the crisp illumination of the fan. Branding accents: Subtle purple (#5E17EB) and gold (#FFD700) room lighting. High-end commercial advertisement, 4k 60fps, photorealistic.</div>
+              <button class="btn-copy" onclick="copyPrompt('fanPrompt', this)" style="margin-top: 8px;">📋 Copy Fan Prompt for Veo</button>
+            </div>
+
+            <!-- Phone -->
+            <div style="background: var(--surface-light); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <strong style="color: var(--gold);">📱 2. Factory-Sealed Phones at Depot Price</strong>
+                <span style="font-size: 0.75rem; color: #fff; background: var(--primary); padding: 2px 8px; border-radius: 6px;">15 Seconds</span>
+              </div>
+              <div class="scene-prompt-box" id="phonePrompt">A 15-second ultra-sharp vertical 9:16 commercial video. Macro close-up shot of hands carefully slicing through the pristine plastic factory seal of a brand-new smartphone box. The lid lifts in satisfying slow motion, revealing the sleek, glossy back of a flagship smartphone reflecting studio lights. Cut to an over-the-shoulder shot of a young Nigerian customer turning on the phone, smiling with genuine delight. A neat purple delivery box with a gold 6-digit verification badge sits on the table beside him. Commercial studio lighting, anamorphic reflections, 4k 60fps, ultra-realistic skin textures.</div>
+              <button class="btn-copy" onclick="copyPrompt('phonePrompt', this)" style="margin-top: 8px;">📋 Copy Phone Prompt for Veo</button>
+            </div>
+
+            <!-- Mattress -->
+            <div style="background: var(--surface-light); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <strong style="color: var(--gold);">🛏️ 3. Virgin Foam Mattress ("Sweet Sleep in Uyo")</strong>
+                <span style="font-size: 0.75rem; color: #fff; background: var(--primary); padding: 2px 8px; border-radius: 6px;">15 Seconds</span>
+              </div>
+              <div class="scene-prompt-box" id="mattressPrompt">A 15-second vertical 9:16 cinematic commercial video. A bright, clean modern bedroom in Uyo with sunlight streaming through sheer curtains. A young Nigerian woman collapses comfortably onto a thick, luxurious virgin foam mattress with crisp white bedsheets. Slow-motion shot of the mattress bouncing smoothly, demonstrating firm, spine-aligning premium foam density. She exhales in total comfort, smiling with pure relaxation. Royal purple (#5E17EB) throws and gold (#FFD700) cushions on the bed. Warm cinematic lighting, professional home commercial cinematography, photorealistic 4k.</div>
+              <button class="btn-copy" onclick="copyPrompt('mattressPrompt', this)" style="margin-top: 8px;">📋 Copy Mattress Prompt for Veo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scene simulation data
+    const scenes = [
+      {
+        num: 1,
+        title: "SCENE 1: THE ATTENTION HOOK",
+        timeRange: "00:00 - 00:08",
+        timerText: "00:04 / 00:56",
+        icon: "🤔",
+        dialogue: "\"UYO PEOPLE! UNA DON SUFFER BEFORE WHEN UNA DEY BUY THINGS ONLINE?\"",
+        screenClass: "screen-scene-1",
+        speech: "Uyo people! Una don suffer before when una dey buy things online?"
+      },
+      {
+        num: 2,
+        title: "SCENE 2: THE WRONG PARCEL",
+        timeRange: "00:08 - 00:16",
+        timerText: "00:12 / 00:56",
+        icon: "📦😱",
+        dialogue: "\"HA! NA THIS THING I ORDER?!\"",
+        screenClass: "screen-scene-2",
+        speech: "Ha! Na this thing I order?"
+      },
+      {
+        num: 3,
+        title: "SCENE 3: THE FRUSTRATION",
+        timeRange: "00:16 - 00:24",
+        timerText: "00:20 / 00:56",
+        icon: "👠🤦‍♀️",
+        dialogue: "\"ME I PAY FOR ORIGINAL SHOE. WETIN DEM SEND? NA ANOTHER COLOUR!\"",
+        screenClass: "screen-scene-3",
+        speech: "Me I pay for original shoe. Wetin dem send give me? Na another size and another colour!"
+      },
+      {
+        num: 4,
+        title: "SCENE 4: MEET VICTORIOUS MARKET",
+        timeRange: "00:24 - 00:32",
+        timerText: "00:28 / 00:56",
+        icon: "📱✨",
+        dialogue: "\"MY PEOPLE, MAKE UNA HEAR THIS ONE. WE GET VICTORIOUS MARKET FOR UYO!\"",
+        screenClass: "screen-scene-4",
+        speech: "My people, make una hear this one. We get Victorious Market for Uyo!"
+      },
+      {
+        num: 5,
+        title: "SCENE 5: THE SHOWROOM & QUALITY",
+        timeRange: "00:32 - 00:40",
+        timerText: "00:36 / 00:56",
+        icon: "💎🛍️",
+        dialogue: "\"NA YOUR SURE PLACE TO FIND QUALITY MATERIALS. GADGETS, FASHION, APPLIANCES!\"",
+        screenClass: "screen-scene-5",
+        speech: "Na your sure place to find quality materials. Phones, gadgets, fashion, home appliances and many more!"
+      },
+      {
+        num: 6,
+        title: "SCENE 6: VERIFIED DOORSTEP DELIVERY",
+        timeRange: "00:40 - 00:48",
+        timerText: "00:44 / 00:56",
+        icon: "🛵🎁",
+        dialogue: "\"NO WASTE TIME AGAIN! VISIT VICTORIOUS MARKET TODAY!\"",
+        screenClass: "screen-scene-6",
+        speech: "No waste time again! Visit Victorious Market today. Order your quality products make we serve you!"
+      },
+      {
+        num: 7,
+        title: "SCENE 7: BRANDED OUTRO & CTA",
+        timeRange: "00:48 - 00:56",
+        timerText: "00:52 / 00:56",
+        icon: "💜🌟",
+        dialogue: "\"VICTORIOUS MARKET! YOUR TRUSTED ONLINE MARKET FOR QUALITY PRODUCTS!\"",
+        screenClass: "screen-scene-7",
+        speech: "Victorious Market! Your trusted online market for quality products. Order today!"
+      }
+    ];
+
+    let currentSceneIdx = 0;
+    let isPlaying = false;
+    let playInterval = null;
+
+    function renderScene(idx) {
+      const s = scenes[idx];
+      const screen = document.getElementById('phoneScreen');
+      screen.className = 'phone-screen ' + s.screenClass;
+      document.getElementById('screenSceneTitle').textContent = s.title;
+      document.getElementById('screenSceneIcon').textContent = s.icon;
+      document.getElementById('screenDialogue').textContent = s.dialogue;
+      document.getElementById('screenTimer').textContent = s.timerText;
+      document.getElementById('currentSceneDisplay').textContent = `Scene ${s.num} of 7`;
+
+      // Highlight corresponding card
+      document.querySelectorAll('.scene-card').forEach((card, i) => {
+        if (i === idx) {
+          card.classList.add('active-scene');
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          card.classList.remove('active-scene');
+        }
+      });
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentSceneIdx = (currentSceneIdx - 1 + scenes.length) % scenes.length;
+      renderScene(currentSceneIdx);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentSceneIdx = (currentSceneIdx + 1) % scenes.length;
+      renderScene(currentSceneIdx);
+    });
+
+    const playBtn = document.getElementById('playBtn');
+    playBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        playBtn.textContent = '⏸';
+        playInterval = setInterval(() => {
+          currentSceneIdx = (currentSceneIdx + 1) % scenes.length;
+          renderScene(currentSceneIdx);
+        }, 4000);
+      } else {
+        playBtn.textContent = '▶';
+        clearInterval(playInterval);
+      }
+    });
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      const target = document.getElementById('tab-' + tabId);
+      if (target) target.classList.add('active');
+    }
+
+    function copyPrompt(elementId, btn) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.innerText;
+        btn.innerText = '✅ Copied to Clipboard!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerText = orig;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    function copyText(str) {
+      navigator.clipboard.writeText(str).then(() => {
+        alert('Copied to clipboard: ' + str);
+      });
+    }
+
+    function downloadSRT() {
+      const srtData = document.getElementById('srtContent').innerText;
+      const blob = new Blob([srtData], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'victorious_market_subtitles.srt';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
+

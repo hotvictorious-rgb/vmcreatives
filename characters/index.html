@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victorious Market — Master Character Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5E17EB;
+      --gold: #FFD700;
+      --bg: #090712;
+      --surface: #141026;
+      --border: rgba(255, 215, 0, 0.18);
+      --text: #FFFFFF;
+      --text-muted: #9E98B3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); padding: 2rem; }
+    .header { max-width: 1200px; margin: 0 auto 2.5rem; text-align: center; }
+    .header h1 { font-size: 2.2rem; font-weight: 900; background: linear-gradient(90deg, #fff, var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .header p { color: var(--text-muted); margin-top: 8px; font-size: 1rem; }
+    .cast-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(94, 23, 235, 0.25); border-color: var(--gold); }
+    .card-img-wrap { width: 100%; height: 380px; position: relative; background: #000; overflow: hidden; }
+    .card-img { width: 100%; height: 100%; object-fit: cover; }
+    .badge { position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); border: 1px solid var(--gold); color: var(--gold); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; }
+    .card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .char-name { font-size: 1.4rem; font-weight: 900; color: #fff; }
+    .char-role { font-size: 0.85rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .char-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+    .char-specs { font-size: 0.78rem; background: rgba(255,255,255,0.04); padding: 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); }
+    .btn-download { background: linear-gradient(135deg, var(--primary), #3F0B9E); color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 10px 16px; border-radius: 10px; font-weight: 700; text-decoration: none; text-align: center; margin-top: auto; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-download:hover { filter: brightness(1.2); }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>THE VICTORIOUS MARKET UNIVERSE</h1>
+    <p>Official Permanent Character Cast for Social Media Skits, Ads & Educational Content</p>
+    <div style="margin-top: 15px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="../CONTENT_CATALOG.md" style="background: rgba(255,215,0,0.15); border: 1px solid var(--gold); color: var(--gold); padding: 8px 18px; border-radius: 999px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">📑 View Master Content Catalog & Future Episodes</a>
+      <a href="../index.html" style="background: rgba(94,23,235,0.2); border: 1px solid var(--primary); color: #fff; padding: 8px 18px; border-radius: 999px; text-decoration: none; font-size: 0.85rem; font-weight: 700;">🎬 Studio Hub</a>
+    </div>
+  </div>
+
+  <div class="cast-grid">
+    <!-- 1A. VICTORIOUS - HEADSHOT -->
+    <div class="card" style="border: 2px solid var(--gold); box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);">
+      <div class="card-img-wrap">
+        <span class="badge" style="background: var(--gold); color: #000;">👑 OFFICIAL APPROVED MASTER</span>
+        <img src="victorious/victorious_official_approved.jpg" alt="Victorious - Brand Ambassador" class="card-img">
+      </div>
+      <div class="card-body">
+        <div class="char-name">VICTORIOUS</div>
+        <div class="char-role">The Official Face of Victorious Market</div>
+        <p class="char-desc">Generated via Google Flow (Nano Banana 2.1). Nailed the authentic Uyo street setting, yellow Keke Napeps, royal purple polo, yellow VICTORIOUS and white MARKET embroidery.</p>
+        <div class="char-specs">
+          <strong>Status:</strong> ✅ LOCKED & APPROVED • <strong>Chest:</strong> Yellow "VICTORIOUS" + White "MARKET"
+        </div>
+        <a href="victorious/victorious_official_approved.jpg" download="Victorious_Official_Approved.jpg" class="btn-download" style="background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; font-weight: 900;">
+          ⬇️ Download Approved Master Image
+        </a>
+      </div>
+    </div>
+
+    <!-- 1B. VICTORIOUS - FULL BODY -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <span class="badge">🧍 VICTORIOUS (FULL BODY)</span>
+        <img src="victorious/victorious_full_body.jpg" alt="Victorious - Full Body Standing" class="card-img">
+      </div>
+      <div class="card-body">
+        <div class="char-name">VICTORIOUS</div>
+        <div class="char-role">Full-Body & Uniform Anchor</div>
+        <p class="char-desc">Complete standing turnaround establishing his athletic-average build, tailored black chinos, white minimalist sneakers, and confident posture.</p>
+        <div class="char-specs">
+          <strong>Full Attire:</strong> Purple & Gold Polo, Black Chinos, Clean White Sneakers, Steel Wristwatch
+        </div>
+        <a href="victorious/victorious_full_body.jpg" download="Victorious_FullBody_Reference.jpg" class="btn-download">
+          ⬇️ Download Full-Body Reference
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. BASSEY -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <span class="badge">🎭 COMEDY STAR (APPROVED)</span>
+        <img src="bassey/bassey_official_approved.jpg" alt="Bassey - The Funny Customer" class="card-img">
+      </div>
+      <div class="card-body">
+        <div class="char-name">BASSEY</div>
+        <div class="char-role">The Funny Everyday Customer</div>
+        <p class="char-desc">Victorious's 29-year-old friend. Dramatic, hilarious, expressive eyebrows and hands, skeptical of online shopping until Victorious Market shows him how easy it is.</p>
+        <div class="char-specs">
+          <strong>Age:</strong> 29 • <strong>Signature Outfit:</strong> Mustard-Yellow Shirt, dark trousers, no logos
+        </div>
+        <a href="bassey/bassey_official_approved.jpg" download="Bassey_Master_Reference.jpg" class="btn-download">
+          ⬇️ Download Approved Reference Image
+        </a>
+      </div>
+    </div>
+
+    <!-- 3. ENO -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <span class="badge">💡 SMART CONSUMER (APPROVED)</span>
+        <img src="eno/eno_official_approved.jpg" alt="Eno - The Smart Shopper" class="card-img">
+      </div>
+      <div class="card-body">
+        <div class="char-name">ENO</div>
+        <div class="char-role">The Smart Consumer Advocate</div>
+        <p class="char-desc">Intelligent, elegant, and observant. Powers the "Before You Buy" series. Shows viewers how to check specs, genuine warranties, and shop smartly on Victorious Market.</p>
+        <div class="char-specs">
+          <strong>Age:</strong> 26 • <strong>Signature Outfit:</strong> Emerald-Green Blouse, cream trousers, soft natural curls
+        </div>
+        <a href="eno/eno_official_approved.jpg" download="Eno_Master_Reference.jpg" class="btn-download">
+          ⬇️ Download Approved Reference Image
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. UNCLE EKONG -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <span class="badge">🏛️ TRADITIONAL SAGE (APPROVED)</span>
+        <img src="ekong/ekong_official_approved.jpg" alt="Uncle Ekong - The Market Sage" class="card-img">
+      </div>
+      <div class="card-body">
+        <div class="char-name">UNCLE EKONG</div>
+        <div class="char-role">The Traditional Market Sage</div>
+        <p class="char-desc">Wise, humorous 52-year-old market veteran. Brings traditional trading wisdom, witty local proverbs, and bridges old-school shopping with Victorious Market depot pricing.</p>
+        <div class="char-specs">
+          <strong>Age:</strong> 52 • <strong>Signature Outfit:</strong> Tailored Burgundy Senator suit, salt-and-pepper beard
+        </div>
+        <a href="ekong/ekong_official_approved.jpg" download="Uncle_Ekong_Master_Reference.jpg" class="btn-download">
+          ⬇️ Download Approved Reference Image
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

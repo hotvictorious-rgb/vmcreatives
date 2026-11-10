@@ -1,0 +1,21 @@
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*~
+
+# Automated browser cache & profiles
+tools/edge_profile/
+edge_profile/
+node_modules/
+
+# Scratch & Temporary Render Caches
+scratch/
+tmp/
+*.tmp
+*.log
+
+# Large Final Render Video Exports (>50MB)
+campaigns/**/vadvert_final_cut.mp4
+*.mp4.part
